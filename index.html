@@ -29,7 +29,7 @@
         <h1 class="p-page__title">lax.jsのデモ</h1>
         <div class="p-page__inner">
           <section class="c-section">
-            <h2 class="c-section__title u-helvetica lax lax_preset_fadeIn:50:100 lax_preset_spin js-lax-1">lax</h2>
+            <h2 class="c-section__title u-helvetica js-lax-1 lax lax_preset_fadeInOut:236:0 lax_preset_seesaw:140:20">lax</h2>
           </section>
           <!-- /.c-section -->
           <section class="c-section">
@@ -170,10 +170,27 @@
         scrollY: {
           scale: [
           ["elInY", "elCenterY"],
-          [3, 1],
+          [5, 1],
           {
-            easing: 'easeInOutQuart',
+            easing: 'easeInOutSine',
           }
+          ],
+          filter: [
+          ["elInY", "elCenterY"],
+          [30, 0],
+          {
+            cssFn: (val) => {
+              return `blur(${val}px)`
+            }
+          }
+          ],
+          rotateY : [
+          ["elInY", "elOutY"],
+          [0, 960]
+          ],
+          translateY: [
+          ["elInY", "elCenterY"],
+          ['screenHeight/2', 0]
           ]
         }
       });
