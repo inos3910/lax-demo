@@ -1,0 +1,24 @@
+@use "global" as *;
+
+.l-header {
+  background: #fff;
+  @include responsive(md) {
+  }
+  @include responsive(xl) {
+  }
+
+  &__inner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90px;
+  }
+
+  &__logo{
+    a{
+      display: block;
+    }
+  }
+}
+
+

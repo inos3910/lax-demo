@@ -1,0 +1,25 @@
+@use "global" as *;
+
+.l-footer {
+  @include responsive(md) {
+  }
+  @include responsive(xl) {
+  }
+
+  &__inner{
+    text-align: center;
+    padding: 60px 0;
+    @include responsive(md) {
+    }
+    @include responsive(xl) {
+    }
+  }
+
+  &__back{
+    line-height: 1.6;
+    @include responsive(md) {
+    }
+    @include responsive(xl) {
+    }
+  }
+}

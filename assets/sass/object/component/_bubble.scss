@@ -1,0 +1,46 @@
+@use "global" as *;
+
+.c-bubble{
+  position: absolute;
+  top: -100vh;
+  left: 0;
+  z-index: 5;
+  @include responsive(md) {
+  }
+  @include responsive(xl) {
+  }
+
+  &__item{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    @include responsive(md) {
+    }
+    @include responsive(xl) {
+    }
+
+    &.blue{
+      background: $blue2;
+      @include responsive(md) {
+      }
+      @include responsive(xl) {
+      }
+    }
+
+    &.red{
+      background: $red ;
+      @include responsive(md) {
+      }
+      @include responsive(xl) {
+      }
+    }
+
+    &.yellow{
+      background: $yellow2;
+      @include responsive(md) {
+      }
+      @include responsive(xl) {
+      }
+    }
+  }
+}

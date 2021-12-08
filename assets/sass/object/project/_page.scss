@@ -1,0 +1,21 @@
+@use "global" as *;
+
+.p-page{
+  padding-top: 60px;
+  @include responsive(md) {
+  }
+  @include responsive(xl) {
+  }
+
+  &__title{
+    text-align: center;
+    font-size: vw-size-sp(45);
+    font-weight: bold;
+    @include responsive(md) {
+      font-size: vw-size-pc(30);
+    }
+    @include responsive(xl) {
+      font-size: 30px;
+    }
+  }
+}

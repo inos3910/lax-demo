@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="format-detection" content="telephone=no, email=no, address=no">
+  <title>lax.jsのデモ｜notes by SHARESL</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <div class="l-cover">
+    <header class="l-header">
+      <div class="l-header__inner u-frame">
+        <div class="l-header__logo">
+          <a href="https://notes.sharesl.net/">
+            <img src="./assets/svg/logo.svg" width="245" height="58" alt="notes by SHARESL">
+          </a>
+        </div>
+        <!-- /.l-header__logo -->
+      </div>
+      <!-- /.l-header__inner -->
+    </header>
+    <!-- /.l-header -->
+    <main class="l-main">
+      <section class="p-page">
+        <h1 class="p-page__title">lax.jsのデモ</h1>
+        <div class="p-page__inner">
+          <section class="c-section">
+            <h2 class="c-section__title u-helvetica lax lax_preset_fadeIn:50:100 lax_preset_spin js-lax-1">lax</h2>
+          </section>
+          <!-- /.c-section -->
+          <section class="c-section">
+            <h2 class="c-section__title u-helvetica js-lax-2">lax</h2>
+          </section>
+          <!-- /.c-section -->
+          <section class="c-section">
+            <h2 class="c-section__title u-helvetica js-lax-3">lax</h2>
+          </section>
+          <!-- /.c-section -->
+          <section class="c-section">
+            <h2 class="c-section__title u-helvetica js-lax-4">lax</h2>
+            <div class="c-bubble">
+              <div class="c-bubble__item blue js-bubble"></div>
+              <div class="c-bubble__item red js-bubble"></div>
+              <div class="c-bubble__item yellow js-bubble"></div>
+              <div class="c-bubble__item red js-bubble"></div>
+              <div class="c-bubble__item blue js-bubble"></div>
+              <div class="c-bubble__item yellow js-bubble"></div>
+              <div class="c-bubble__item blue js-bubble"></div>
+              <div class="c-bubble__item red js-bubble"></div>
+              <div class="c-bubble__item yellow js-bubble"></div>
+              <div class="c-bubble__item red js-bubble"></div>
+              <div class="c-bubble__item blue js-bubble"></div>
+              <div class="c-bubble__item blue js-bubble"></div>
+              <div class="c-bubble__item red js-bubble"></div>
+              <div class="c-bubble__item yellow js-bubble"></div>
+              <div class="c-bubble__item red js-bubble"></div>
+              <div class="c-bubble__item blue js-bubble"></div>
+              <div class="c-bubble__item yellow js-bubble"></div>
+              <div class="c-bubble__item blue js-bubble"></div>
+              <div class="c-bubble__item red js-bubble"></div>
+              <div class="c-bubble__item yellow js-bubble"></div>
+              <div class="c-bubble__item red js-bubble"></div>
+              <div class="c-bubble__item blue js-bubble"></div>
+              <div class="c-bubble__item yellow js-bubble"></div>
+              <div class="c-bubble__item blue js-bubble"></div>
+              <div class="c-bubble__item red js-bubble"></div>
+            </div>
+          </section>
+          <!-- /.c-section -->
+          <section class="c-section">
+            <div class="c-section__bg js-bg"></div>
+            <h2 class="c-section__title u-helvetica js-lax-5">lax</h2>
+          </section>
+          <!-- /.c-section -->
+        </div>
+        <!-- /.p-page__inner -->
+      </section>
+      <!-- /.p-page -->
+    </main>
+    <!-- /.l-main -->
+    <footer class="l-footer">
+      <div class="l-footer__inner u-frame">
+        <a class="l-footer__back" href="https://notes.sharesl.net/articles/" target="_blank" rel="noopener">「lax.jsの使い方」<br>記事ページに戻る</a>
+      </div>
+      <!-- /.l-footer__inner -->
+    </footer>
+    <!-- /.l-footer -->
+  </div>
+  <!-- /.l-cover -->
+  <script src="https://cdn.jsdelivr.net/npm/lax.js" ></script>
+  <script>
+    window.onload = function () {
+      lax.init()
+
+      lax.addDriver('scrollY', function () {
+        return window.scrollY;
+      });
+
+      lax.addElements('.js-lax-2',
+      {
+        scrollY: {
+          scale: [["elInY", "elOutY"], [0.25, 10]],
+          opacity: [["elInY", "elCenterY", "elOutY"], [1, 1, 0]],
+        }
+      });
+
+      lax.addElements(".js-lax-3", {
+        scrollY: {
+          translateX: [
+          ["elInY", "elCenterY", "elOutY"],
+          ["-screenWidth", 0, 'screenWidth'],
+          {
+            easing: 'easeInOutQuart',
+          }
+          ],
+          scale: [
+          ["elInY", "elCenterY", "elOutY"],
+          [0.3, 5, 0.3]
+          ],
+          opacity: [
+          ["elInY", "elCenterY", "elOutY"],
+          [0, 1, 0],
+          {
+            easing: 'easeInOutCubic'
+          }
+          ],
+        }
+      });
+
+      lax.addElements(".js-lax-4", {
+        scrollY: {
+          translateY: [["elInY", "elOutY"], ["-screenHeight/4", "screenHeight/4"]],
+          skewX: [["elInY", "elOutY"], [40, -40]],
+        }
+      });
+
+      lax.addElements(".js-bubble", {
+        scrollY: {
+          translateY: [
+          ["screenHeight/4", "screenHeight * 3"],
+          ["Math.random()*screenHeight", "Math.random()*screenHeight*3"]
+          ],
+          opacity: [
+          ["screenHeight/4", "screenHeight/2"],
+          [0, 1]
+          ],
+          scale: [[0], ["(Math.random()*0.8)+0.2"]],
+          translateX: [[0], ["index*(screenWidth/25)-50"]],
+          transform: [
+          [0, 4000],
+          [0, "(Math.random() + 0.8) * 1000"],
+          {
+            cssFn: function (val) {
+              return `rotateX(${val % 360}deg)`
+            }
+          }
+          ],
+          rotate: [
+          [0, 4000],
+          [0, "(Math.random() - 0.5) * 1000"],
+          ],
+        }
+      });
+
+      lax.addElements(".js-lax-5", {
+        scrollY: {
+          scale: [
+          ["elInY", "elCenterY"],
+          [3, 1],
+          {
+            easing: 'easeInOutQuart',
+          }
+          ]
+        }
+      });
+
+      lax.addElements(".js-bg", {
+        scrollY: {
+          opacity: [["elInY+elHeight/2", "elCenterY"],[1, 0]]
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>
