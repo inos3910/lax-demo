@@ -14,10 +14,6 @@
   @include responsive(xl) {
   }
 
-  &:first-child{
-    margin-top: 60px;
-  }
-
   &:nth-child(odd){
     color: $blue;
     background: $lblue;
@@ -32,10 +28,10 @@
     font-size: vw-size-sp(90);
     font-weight: bold;
     @include responsive(md) {
-      font-size: vw-size-pc(60);
+      font-size: vw-size-pc(90);
     }
     @include responsive(xl) {
-      font-size: 60px;
+      font-size: 90px;
     }
   }
 
@@ -45,6 +41,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: $blue;
+    background: #000;
   }
 }

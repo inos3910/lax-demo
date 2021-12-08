@@ -14,77 +14,45 @@
   <div class="l-cover">
     <header class="l-header">
       <div class="l-header__inner u-frame">
-        <div class="l-header__logo">
-          <a href="https://notes.sharesl.net/">
-            <img src="./assets/svg/logo.svg" width="245" height="58" alt="notes by SHARESL">
-          </a>
-        </div>
-        <!-- /.l-header__logo -->
+        <div class="l-header__title">lax.jsのデモ</div>
+        <!-- /.l-header__title -->
       </div>
       <!-- /.l-header__inner -->
     </header>
     <!-- /.l-header -->
     <main class="l-main">
-      <section class="p-page">
-        <h1 class="p-page__title">lax.jsのデモ</h1>
-        <div class="p-page__inner">
-          <section class="c-section">
-            <h2 class="c-section__title u-helvetica js-lax-1 lax lax_preset_fadeInOut:236:0 lax_preset_seesaw:140:20">lax</h2>
-          </section>
-          <!-- /.c-section -->
-          <section class="c-section">
-            <h2 class="c-section__title u-helvetica js-lax-2">lax</h2>
-          </section>
-          <!-- /.c-section -->
-          <section class="c-section">
-            <h2 class="c-section__title u-helvetica js-lax-3">lax</h2>
-          </section>
-          <!-- /.c-section -->
-          <section class="c-section">
-            <h2 class="c-section__title u-helvetica js-lax-4">lax</h2>
-            <div class="c-bubble">
-              <div class="c-bubble__item blue js-bubble"></div>
-              <div class="c-bubble__item red js-bubble"></div>
-              <div class="c-bubble__item yellow js-bubble"></div>
-              <div class="c-bubble__item red js-bubble"></div>
-              <div class="c-bubble__item blue js-bubble"></div>
-              <div class="c-bubble__item yellow js-bubble"></div>
-              <div class="c-bubble__item blue js-bubble"></div>
-              <div class="c-bubble__item red js-bubble"></div>
-              <div class="c-bubble__item yellow js-bubble"></div>
-              <div class="c-bubble__item red js-bubble"></div>
-              <div class="c-bubble__item blue js-bubble"></div>
-              <div class="c-bubble__item blue js-bubble"></div>
-              <div class="c-bubble__item red js-bubble"></div>
-              <div class="c-bubble__item yellow js-bubble"></div>
-              <div class="c-bubble__item red js-bubble"></div>
-              <div class="c-bubble__item blue js-bubble"></div>
-              <div class="c-bubble__item yellow js-bubble"></div>
-              <div class="c-bubble__item blue js-bubble"></div>
-              <div class="c-bubble__item red js-bubble"></div>
-              <div class="c-bubble__item yellow js-bubble"></div>
-              <div class="c-bubble__item red js-bubble"></div>
-              <div class="c-bubble__item blue js-bubble"></div>
-              <div class="c-bubble__item yellow js-bubble"></div>
-              <div class="c-bubble__item blue js-bubble"></div>
-              <div class="c-bubble__item red js-bubble"></div>
-            </div>
-          </section>
-          <!-- /.c-section -->
-          <section class="c-section">
-            <div class="c-section__bg js-bg"></div>
-            <h2 class="c-section__title u-helvetica js-lax-5">lax</h2>
-          </section>
-          <!-- /.c-section -->
-        </div>
-        <!-- /.p-page__inner -->
-      </section>
+      <div class="p-page">
+        <section class="c-section" id="section-1">
+          <h2 class="c-section__title u-helvetica js-lax-1">lax</h2>
+        </section>
+        <section class="c-section" id="section-2">
+          <h2 class="c-section__title u-helvetica lax lax_preset_fadeInOut:236:0 lax_preset_seesaw:140:20">lax</h2>
+        </section>
+        <!-- /.c-section -->
+        <section class="c-section" id="section-3">
+          <h2 class="c-section__title u-helvetica js-lax-2">lax</h2>
+        </section>
+        <!-- /.c-section -->
+        <section class="c-section" id="section-4">
+          <h2 class="c-section__title u-helvetica js-lax-3">lax</h2>
+        </section>
+        <!-- /.c-section -->
+        <section class="c-section" id="section-5">
+          <h2 class="c-section__title u-helvetica js-lax-4">lax</h2>
+        </section>
+        <!-- /.c-section -->
+        <section class="c-section" id="section-6">
+          <h2 class="c-section__title u-helvetica js-lax-5">lax</h2>
+          <div class="c-section__bg js-bg"></div>
+        </section>
+        <!-- /.c-section -->
+      </div>
       <!-- /.p-page -->
     </main>
     <!-- /.l-main -->
     <footer class="l-footer">
       <div class="l-footer__inner u-frame">
-        <a class="l-footer__back" href="https://notes.sharesl.net/articles/" target="_blank" rel="noopener">「lax.jsの使い方」<br>記事ページに戻る</a>
+        <a class="l-footer__back" href="https://notes.sharesl.net/articles/2451/" target="_blank" rel="noopener">「lax.jsの使い方」<br>記事ページに戻る</a>
       </div>
       <!-- /.l-footer__inner -->
     </footer>
@@ -100,29 +68,41 @@
         return window.scrollY;
       });
 
-      lax.addElements('.js-lax-2',
-      {
+      lax.addElements('.js-lax-1', {
         scrollY: {
-          scale: [["elInY", "elOutY"], [0.25, 10]],
-          opacity: [["elInY", "elCenterY", "elOutY"], [1, 1, 0]],
+          translateX: [
+          ['elCenterY', 'elOutY'],
+          [-300, 300],
+          {
+            easing: 'easeInOutSine',
+          }
+          ],
         }
       });
 
-      lax.addElements(".js-lax-3", {
+      lax.addElements('.js-lax-2',
+      {
+        scrollY: {
+          scale: [['elInY', 'elOutY'], [0.25, 10]],
+          opacity: [['elInY', 'elCenterY', 'elOutY'], [1, 1, 0]],
+        }
+      });
+
+      lax.addElements('.js-lax-3', {
         scrollY: {
           translateX: [
-          ["elInY", "elCenterY", "elOutY"],
-          ["-screenWidth", 0, 'screenWidth'],
+          ['elInY', 'elCenterY', 'elOutY'],
+          ['-screenWidth', 0, 'screenWidth'],
           {
             easing: 'easeInOutQuart',
           }
           ],
           scale: [
-          ["elInY", "elCenterY", "elOutY"],
+          ['elInY', 'elCenterY', 'elOutY'],
           [0.3, 5, 0.3]
           ],
           opacity: [
-          ["elInY", "elCenterY", "elOutY"],
+          ['elInY', 'elCenterY', 'elOutY'],
           [0, 1, 0],
           {
             easing: 'easeInOutCubic'
@@ -131,28 +111,28 @@
         }
       });
 
-      lax.addElements(".js-lax-4", {
+      lax.addElements('.js-lax-4', {
         scrollY: {
-          translateY: [["elInY", "elOutY"], ["-screenHeight/4", "screenHeight/4"]],
-          skewX: [["elInY", "elOutY"], [40, -40]],
+          translateY: [['elInY', 'elOutY'], ['-screenHeight/4', 'screenHeight/4']],
+          skewX: [['elInY', 'elOutY'], [40, -40]],
         }
       });
 
-      lax.addElements(".js-bubble", {
+      lax.addElements('.js-bubble', {
         scrollY: {
           translateY: [
-          ["screenHeight/4", "screenHeight * 3"],
-          ["Math.random()*screenHeight", "Math.random()*screenHeight*3"]
+          ['screenHeight/4', 'screenHeight * 3'],
+          ['Math.random()*screenHeight', 'Math.random()*screenHeight*3']
           ],
           opacity: [
-          ["screenHeight/4", "screenHeight/2"],
+          ['screenHeight/4', 'screenHeight/2'],
           [0, 1]
           ],
-          scale: [[0], ["(Math.random()*0.8)+0.2"]],
-          translateX: [[0], ["index*(screenWidth/25)-50"]],
+          scale: [[0], ['(Math.random()*0.8)+0.2']],
+          translateX: [[0], ['index*(screenWidth/25)-50']],
           transform: [
           [0, 4000],
-          [0, "(Math.random() + 0.8) * 1000"],
+          [0, '(Math.random() + 0.8) * 1000'],
           {
             cssFn: function (val) {
               return `rotateX(${val % 360}deg)`
@@ -161,22 +141,22 @@
           ],
           rotate: [
           [0, 4000],
-          [0, "(Math.random() - 0.5) * 1000"],
+          [0, '(Math.random() - 0.5) * 1000'],
           ],
         }
       });
 
-      lax.addElements(".js-lax-5", {
+      lax.addElements('.js-lax-5', {
         scrollY: {
           scale: [
-          ["elInY", "elCenterY"],
+          ['elInY', 'elCenterY'],
           [5, 1],
           {
             easing: 'easeInOutSine',
           }
           ],
           filter: [
-          ["elInY", "elCenterY"],
+          ['elInY', 'elCenterY'],
           [30, 0],
           {
             cssFn: (val) => {
@@ -185,19 +165,19 @@
           }
           ],
           rotateY : [
-          ["elInY", "elOutY"],
-          [0, 960]
+          ['elInY', 'elOutY'],
+          [-1080, 0]
           ],
           translateY: [
-          ["elInY", "elCenterY"],
+          ['elInY', 'elCenterY'],
           ['screenHeight/2', 0]
           ]
         }
       });
 
-      lax.addElements(".js-bg", {
+      lax.addElements('.js-bg', {
         scrollY: {
-          opacity: [["elInY+elHeight/2", "elCenterY"],[1, 0]]
+          opacity: [['elInY+elHeight/2', 'elCenterY'],[1, 0]]
         }
       });
     }
