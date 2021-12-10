@@ -61,8 +61,8 @@
   <!-- /.l-cover -->
   <script src="https://cdn.jsdelivr.net/npm/lax.js@2.0.3/lib/lax.min.js" ></script>
   <script>
-    window.onload = function () {
-      lax.init()
+    window.addEventListener('load', function() {
+      lax.init();
 
       lax.addDriver('scrollY', function () {
         return window.scrollY;
@@ -72,11 +72,8 @@
         scrollY: {
           translateX: [
           ['elCenterY', 'elOutY'],
-          [-300, 300],
-          {
-            easing: 'easeInOutSine',
-          }
-          ],
+          [-300, 300]
+          ]
         }
       });
 
@@ -180,7 +177,7 @@
           opacity: [['elInY+elHeight/2', 'elCenterY'],[1, 0]]
         }
       });
-    }
+    });
   </script>
 </body>
 
