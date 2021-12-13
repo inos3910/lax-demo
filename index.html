@@ -112,7 +112,11 @@
 
       lax.addDriver('scrollY', function () {
         return window.scrollY;
-      });
+      },
+      {
+        inertiaEnabled : true
+      }
+      );
 
       lax.addElements('.js-lax-1', {
         scrollY: {
@@ -238,11 +242,12 @@
           [0.2, 1.5, 0.2],
           {
             easing: 'easeInOutSine',
+            inertia: 0.01
           }
           ],
           rotate: [
           ['elInY', 'elCenterY', 'elOutY'],
-          [0, -360, 0],
+          [0, 360, 720],
           {
             easing: 'easeInOutSine',
           }
