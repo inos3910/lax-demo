@@ -14,6 +14,11 @@
   @include responsive(xl) {
   }
 
+  &--l{
+    min-height: 200vh;
+    height: 100%;
+  }
+
   &:nth-child(odd){
     color: $blue;
     background: $lblue;
@@ -22,6 +27,14 @@
   &:nth-child(even){
     color: $lblue;
     background: $blue;
+  }
+
+  &__inner{
+    padding: 90px;
+    @include responsive(md) {
+    }
+    @include responsive(xl) {
+    }
   }
 
   &__title{

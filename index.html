@@ -46,6 +46,52 @@
           <div class="c-section__bg js-bg"></div>
         </section>
         <!-- /.c-section -->
+        <section class="c-section c-section--l" id="section-7">
+          <div class="c-section__inner">
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+            <div class="c-square js-square"></div>
+          </div>
+          <!-- /.c-section__inner -->
+        </section>
+        <!-- /.c-section -->
       </div>
       <!-- /.p-page -->
     </main>
@@ -175,6 +221,32 @@
       lax.addElements('.js-bg', {
         scrollY: {
           opacity: [['elInY+elHeight/2', 'elCenterY'],[1, 0]]
+        }
+      });
+
+      lax.addElements('.js-square', {
+        scrollY: {
+          translateX: [
+          ['elInY', 'elCenterY', 'elOutY'],
+          ['-elWidth*2', 0, 'elWidth*2'],
+          {
+            easing: 'easeInOutSine',
+          }
+          ],
+          scale: [
+          ['elInY', 'elCenterY', 'elOutY'],
+          [0.2, 1.5, 0.2],
+          {
+            easing: 'easeInOutSine',
+          }
+          ],
+          rotate: [
+          ['elInY', 'elCenterY', 'elOutY'],
+          [0, -360, 0],
+          {
+            easing: 'easeInOutSine',
+          }
+          ]
         }
       });
     });
